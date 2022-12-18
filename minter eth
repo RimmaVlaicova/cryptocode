@@ -1,0 +1,6 @@
+function mint(uint256 _tokenId) public {
+  require(_tokenId > 0, "Token ID must be greater than 0");
+  require(tokens[_tokenId] == address(0), "Token already exists");
+  tokens[_tokenId] = msg.sender;
+  emit TokenMinted(_tokenId);
+}
